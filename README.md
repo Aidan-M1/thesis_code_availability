@@ -8,7 +8,7 @@ Citizen Science to Monitor Coral Reefs" by Aidan Murray, 2025.
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Repository Structure
-- `preparing dataset` - Python files used to prepare the dataset.
+- `preparing_dataset` - Python files used to prepare the dataset.
 - `ollama_container`- Code used to setup a container with the required model.
 - `prompt_test_container` - Code used to test each prompt locally with ollama.
 - `notebooks` - Colab notebooks used to fine-tune and validate models.
