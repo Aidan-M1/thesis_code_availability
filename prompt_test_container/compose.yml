@@ -1,0 +1,23 @@
+services:
+  app:
+    build: ./app
+    depends_on:
+      - ollama
+        # condition: service_healthy
+    environment:
+      - OLLAMA_URL=http://ollama:11434/api/chat
+    volumes:
+      - ../data:/app/data
+  ollama:
+    image: fyp/benthiq-3b:base-model
+    container_name: benthiq-container
+    volumes:
+      - model_container_ollama-volume:/root/.ollama
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:11434"]
+    #   interval: 10s
+    #   timeout: 5s
+    #   retries: 10
+volumes:
+  model_container_ollama-volume:
+    external: true
